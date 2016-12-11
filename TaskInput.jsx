@@ -8,4 +8,4 @@ class TextInput extends React.Component{
     }
 }
 
-ReactDOM.render(<TextInput/>, document.getElementById('app'));
+//ReactDOM.render(<TextInput/>, document.getElementById('app'));
