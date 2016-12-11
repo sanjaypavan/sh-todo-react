@@ -1,2 +1,2 @@
-import TaskInput from './Quadrant.jsx';
-import Task      from './Task.jsx';
+import TaskInput from './Components/Quadrant/Quadrant.jsx';
+import Task      from './Components/Task/Task.jsx';

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Task from './Task.jsx';
+import Task from '../Task/Task.jsx';
+import quadCss from './Quadrant.css';
 
 class Quadrant extends React.Component {
     
@@ -24,7 +25,7 @@ class Quadrant extends React.Component {
     }
 
     render() {
-        return (<div className="quadrant">
+        return (<div className={quadCss.quadrant1}>
         {this.state.tasks.map((task, i) => {
             return (<Task key = {i}>{task}</Task>)
         })}
