@@ -13,7 +13,7 @@ class Quadrant extends React.Component {
 
     addTask(text) {
         var tasks = [
-            ...this.state.taks,
+            ...this.state.tasks,
             text
         ]
         this.setState({tasks})
@@ -28,7 +28,9 @@ class Quadrant extends React.Component {
         {this.state.tasks.map((task, i) => {
             return (<Task key = {i}>{task}</Task>)
         })}
-        </div>)
+        <button onClick={() => this.addTask('new')}>+</button>        
+        </div>
+        )
     }
 }
 

@@ -7,7 +7,8 @@ var config = {
         path: __dirname, 
         filename: 'bundle.js' 
     },
-
+    debug: true,
+    devtool: "eval-source-map",
     module: {
         loaders: [
             {
