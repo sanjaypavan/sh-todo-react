@@ -1,0 +1,64 @@
+#app {
+        position: absolute;
+        top:50%;
+        left:50%;
+        height: 700px;
+        width: 700px;
+        margin: -350px 0 0 -350px;
+        
+}
+
+.quadrant {
+        height: 50%;
+        border: 1px solid #ddd;
+        text-align: center;
+}
+
+.quadrant .tasks{
+        height: 100%;
+        overflow: auto;
+}
+
+.quadrant1 .task {
+        background: #dff0d8;
+}
+
+.quadrant2 .task {
+        background: #d9edf7;
+}
+
+.quadrant3 .task {
+        background: #fcf8e3;
+}
+
+.quadrant4 .task {
+        background: #f2dede;
+}
+
+.task {
+        margin: 10px;
+        color: black;
+        padding: 10px;
+        border-radius: 10px;
+        position:relative;
+}
+
+.task:hover{
+        cursor: pointer ;
+}
+
+.task .task_edit {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding-top:3px;
+        padding-right: 5px;
+}
+
+.quadrant .add_task {
+        position: absolute;
+        bottom: 0;
+        z-index: 15;
+        width: 100%;
+        background: white;
+}
