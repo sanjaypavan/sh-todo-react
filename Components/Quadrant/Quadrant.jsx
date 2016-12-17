@@ -4,11 +4,11 @@ import Task from '../Task/Task.jsx';
 import quadCss from './Quadrant.css';
 
 class Quadrant extends React.Component {
-    
+
     constructor(props) {
         super(props);
         this.state = {
-            tasks: ['one','two','three','four']
+            tasks: ['one', 'two', 'three', 'four']
         };
     }
 
@@ -17,7 +17,7 @@ class Quadrant extends React.Component {
             ...this.state.tasks,
             text
         ]
-        this.setState({tasks})
+        this.setState({ tasks })
     }
 
     eachTask(task) {
@@ -25,14 +25,17 @@ class Quadrant extends React.Component {
     }
 
     render() {
-        return (<div className={quadCss.quadrant1}>
-        {this.state.tasks.map((task, i) => {
-            return (<Task key = {i}>{task}</Task>)
-        })}
-        <button onClick={() => this.addTask('new')}>+</button>        
-        </div>
+        return (
+            <div className={this.props.quadrant + ' ' + "quadrant" + ' ' + "col-md-6"}>
+                <div className="tasks">
+                    {this.state.tasks.map((task, i) => {
+                        return (<Task key={i}>{task}</Task>)
+                    })}
+                </div>
+                <button onClick={() => this.addTask('new')} className='btn'>+</button>
+            </div>
         )
     }
 }
 
-ReactDOM.render(<Quadrant/>, document.getElementById('app'));
+export default Quadrant;

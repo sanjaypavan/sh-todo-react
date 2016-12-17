@@ -3,9 +3,12 @@ import taskCss from './Task.css';
 
 
 class Task extends React.Component {
-    render () {
+    render() {
         return (
-            <div className={taskCss.task}>{this.props.children}</div>
+            <div className="task">
+                <div className="task_text">{this.props.children}</div>
+                <div className="task_edit">x</div>
+            </div>
         )
     }
 }
