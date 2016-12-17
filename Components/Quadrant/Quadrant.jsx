@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Task from '../Task/Task.jsx';
+import TaskInput from '../TaskInput/TaskInput.jsx';
 import quadCss from './Quadrant.css';
 
 class Quadrant extends React.Component {
@@ -8,7 +9,7 @@ class Quadrant extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            tasks: ['one', 'two', 'three', 'four']
+            tasks: []
         };
     }
 
@@ -32,7 +33,7 @@ class Quadrant extends React.Component {
                         return (<Task key={i}>{task}</Task>)
                     })}
                 </div>
-                <button onClick={() => this.addTask('new')} className='btn'>+</button>
+                <TaskInput onClick={this.addTask.bind(this)}></TaskInput>
             </div>
         )
     }
