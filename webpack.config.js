@@ -15,9 +15,9 @@ var config = {
             {
                 test: /.jsx?$/,
                 loader: 'babel-loader',
-                exclude: /node-modules/,
+                exclude: /node_modules/,
                 query: {
-                    presets: ['es2015', 'react']
+                    presets: ['react','es2015']
                 }
             },
             {

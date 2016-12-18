@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 import Task from '../Task/Task.jsx';
 import TaskInput from '../TaskInput/TaskInput.jsx';
 import quadCss from './Quadrant.css';
@@ -9,7 +11,7 @@ class Quadrant extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            tasks: []
+            tasks: ['one']
         };
     }
 
