@@ -1,16 +1,15 @@
 import React from 'react';
 import { DragSource } from 'react-dnd';
 import taskCss from './Task.css';
+import { ItemTypes } from '../Constants.jsx';
 
 const taskSource = {
     beginDrag(props) {
-        return {};
-    }
+        var item = {taskText: props.children};
+        return item;
+    },
 }
 
-const ItemTypes = {
-    TASK: 'task'
-}
 
 function collect(connect, monitor) {
     return {

@@ -1,10 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { DragDropContext } from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
+import { DropTarget } from 'react-dnd';
+import { ItemTypes } from '../Constants.jsx';
 import Task from '../Task/Task.jsx';
 import TaskInput from '../TaskInput/TaskInput.jsx';
 import quadCss from './Quadrant.css';
+
+
+const quadrantTarget = {
+    drop(props, monitor, component) {
+        var item = monitor.getItem();
+        component.addTask(item['taskText']); 
+    }
+}
+
+function collect(connect, monitor){
+    return {
+        connectDropTarget: connect.dropTarget(),
+        isOver: monitor.isOver()
+    }
+}
 
 class Quadrant extends React.Component {
 
@@ -28,7 +43,10 @@ class Quadrant extends React.Component {
     }
 
     render() {
-        return (
+
+        const {connectDropTarget, isOver} = this.props;
+        
+        return connectDropTarget(
             <div className={this.props.quadrant + ' ' + "quadrant" + ' ' + "col-md-6"}>
                 <div className="tasks">
                     {this.state.tasks.map((task, i) => {
@@ -37,8 +55,8 @@ class Quadrant extends React.Component {
                 </div>
                 <TaskInput onClick={this.addTask.bind(this)}></TaskInput>
             </div>
-        )
+        );
     }
 }
 
-export default Quadrant;
+export default DropTarget(ItemTypes.TASK, quadrantTarget, collect)(Quadrant);
